@@ -7,7 +7,7 @@ def fib1(n: Int): Int = n match {
 	case _ => fib1(n - 1) + fib1(n -2)
 }
 
-println("Fib of 5 - old style recursion : " + fib1(6))
+println("Fib of 6 - old style recursion : " + fib1(6))
 
 def fib2(n: Int) = {
 	def fib_tail(n: Int, a: Int, b: Int): Int = n match {
@@ -17,7 +17,7 @@ def fib2(n: Int) = {
 	fib_tail(n, 0, 1)
 }
 
-println("Fib of 5 using tail recursion : " + fib2(6))
+println("Fib of 6 using tail recursion : " + fib2(6))
 
 lazy val fibs: Stream[BigInt] = BigInt(0) #:: BigInt(1) #:: fibs.zip(fibs.tail).map{n => n._1 + n._2}
 
